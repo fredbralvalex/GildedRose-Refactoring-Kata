@@ -2,7 +2,7 @@
 
 ### Installation
 
-#### Eclipse
+#### Eclipse IDE (No prior installation required)
 
 This solution will use Eclipse IDE with Maven for building and running the application.
 [Eclipse 2022-06](https://www.eclipse.org/downloads/)
@@ -31,3 +31,58 @@ If the project doesn't build, maybe the Build Path is not set correctly. By Righ
 
 Maven includes the package for running tests and the specification is on pom.xml. If the project is built correctly as a Maven Project JUnit classes should be imported. If not, as a quick fix option on one of the test files, it is possible to select and add Junit4 to the build path.
 
+#### JAVA SDK (A prior JDK installed is required)
+
+In the case there is a [Java SE Development Kit](https://www.oracle.com/ca-en/java/technologies/javase/javase8-archive-downloads.html) installed it is possible to use the pre-defined command mvnw or gradlew inside the project.
+
+** All commands must be executer on the project root path : '.../GildedRose-Refactoring-Kata/'
+
+##### Using Maven Wrapper ([mvnw](https://maven.apache.org/wrapper/))
+
+. Running the Tests (by executing this command the tests will run and show the results)
+		
+		mvnw clean test
+	
+. Running the Main application (It will be needed to copy the main file application to the src.main path)
+
+1. Copy the main file application (TexttestFixture.java) to the src.main path (from src/test/java to src/main/java)
+	
+	Windows: copy src\test\java\com\gildedrose\TexttestFixture.java src\main\java\com\gildedrose
+	Linux: cp src/test/java/com/gildedrose/TexttestFixture.java src/main/java/com/gildedrose
+	
+2. Execute (where 10 is the number of days inside the application):
+
+		mvnw compile exec:java -Dexec.mainClass="com.gildedrose.TexttestFixture" -Dexec.args="10"
+
+##### using Gradle Wrapper ([gradlew](https://docs.gradle.org/current/userguide/gradle_wrapper.html))
+
+. Test  the Tests (by executing this command the tests will run and will generate a html for the results at '/build/reports/tests/test/index.html')
+		
+		gradlew clean test
+	
+. Running the Main application (It will be needed to copy the main file application to the src.main path)
+1. Copy the main file application (TexttestFixture.java) to the src.main path (from src/test/java to src/main/java)
+	
+	Windows: copy src\test\java\com\gildedrose\TexttestFixture.java src\main\java\com\gildedrose
+	Linux: cp src/test/java/com/gildedrose/TexttestFixture.java src/main/java/com/gildedrose
+	
+2. Execute (where 10 is the number of days inside the application):
+
+		gradlew clean run --args="10"
+	
+##### Trouble shoot
+
+. JAVA_HOME not found in your environment (JAVA_HOME is not defined correctly)
+
+Either Windows or Linux environment needs to set the JAVA_HOME: 
+
+1. For windows environment: looking for "Edit the System environment variable" or going for System Properties at Control Panel (Advanced tab) is possible to add a new path variable called "JAVA_HOME" with the JDK folder path as the value. Adding '%JAVAHOME%\bin' to the path variable enables the use of java and javac commands.
+
+2. For Linux environment it requires the change of a file (/etc/profile or /etc/profile.d/jdk_home.sh) by adding the lines:   
+
+		export JAVA_HOME="path/to/JDK"
+		export PATH=$PATH:$JAVA_HOME/bin	
+**using only the first line would work at the terminal
+	
+   
+Any Question, let me know!
