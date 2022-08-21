@@ -17,17 +17,17 @@ This solution will use Eclipse IDE with Maven for building and running the appli
 
 4. In order to run there are two ways by main entry point and using the tests. 
    
-   . The first is running the entry point main by selecting Menu Run -> Run as -> Java Application (The project needs to be selected and the unique entry point at TexttestFixture.java will be used). Also, it is possible to select Run configuration... instead of Run as. This way, it is possible to set an argument to the main, which for this application is the number of degrading days. For this approach, the console will show a list of items degrading per day (no argument means 1 day).
+   * The first is running the entry point main by selecting Menu Run -> Run as -> Java Application (The project needs to be selected and the unique entry point at TexttestFixture.java will be used). Also, it is possible to select Run configuration... instead of Run as. This way, it is possible to set an argument to the main, which for this application is the number of degrading days. For this approach, the console will show a list of items degrading per day (no argument means 1 day).
    
-   . The second option is running the Tests. There are several tests following the main entry point example that would be an option to check the application behavior.
+   * The second option is running the Tests. There are several tests following the main entry point example that would be an option to check the application behavior.
 
 ##### Trouble shoot
 
-. Wrong Build Path or not selected
+* Wrong Build Path or not selected
 
 If the project doesn't build, maybe the Build Path is not set correctly. By Right Clicking Build Path option : Configure Build Path is possible to select the folders: /gilded-rose-kata/src/main/java and /gilded-rose-kata/src/test/java. The problem should be solved, if not, it is possible to clean the project using maven feature by Right click -> Maven -> Update project.
 
-. JUnit not Find
+* JUnit not Find
 
 Maven includes the package for running tests and the specification is on pom.xml. If the project is built correctly as a Maven Project JUnit classes should be imported. If not, as a quick fix option on one of the test files, it is possible to select and add Junit4 to the build path.
 
@@ -39,11 +39,19 @@ In the case there is a [Java SE Development Kit](https://www.oracle.com/ca-en/ja
 
 ##### Using Maven Wrapper ([mvnw](https://maven.apache.org/wrapper/))
 
-. Running the Tests (by executing this command the tests will run and show the results)
+* Giving permission to mvnw on Linux
+
+		chmod +x mvnw
+
+* May be required to use the key sudo with the prefix to run sh command when using Linux
+
+		sudo ./mvnw
+		
+* Running the Tests (by executing this command the tests will run and show the results)
 		
 		mvnw clean test
 	
-. Running the Main application (It will be needed to copy the main file application to the src.main path)
+* Running the Main application (It will be needed to copy the main file application to the src.main path)
 
 1. Copy the main file application (TexttestFixture.java) to the src.main path (from src/test/java to src/main/java)
 	
@@ -56,11 +64,19 @@ In the case there is a [Java SE Development Kit](https://www.oracle.com/ca-en/ja
 
 ##### using Gradle Wrapper ([gradlew](https://docs.gradle.org/current/userguide/gradle_wrapper.html))
 
-. Test  the Tests (by executing this command the tests will run and will generate a html for the results at '/build/reports/tests/test/index.html')
+* Giving permission to gradlew on Linux
+
+		chmod +x gradlew
+
+* May be required to use the key sudo with the prefix to run sh command when using Linux
+
+		sudo ./gradlew
+
+* Test  the Tests (by executing this command the tests will run and will generate a html for the results at '/build/reports/tests/test/index.html')
 		
 		gradlew clean test
 	
-. Running the Main application (It will be needed to copy the main file application to the src.main path)
+* Running the Main application (It will be needed to copy the main file application to the src.main path)
 1. Copy the main file application (TexttestFixture.java) to the src.main path (from src/test/java to src/main/java)
 	
 	Windows: copy src\test\java\com\gildedrose\TexttestFixture.java src\main\java\com\gildedrose
@@ -72,7 +88,7 @@ In the case there is a [Java SE Development Kit](https://www.oracle.com/ca-en/ja
 	
 ##### Trouble shoot
 
-. JAVA_HOME not found in your environment (JAVA_HOME is not defined correctly)
+* JAVA_HOME not found in your environment (JAVA_HOME is not defined correctly)
 
 Either Windows or Linux environment needs to set the JAVA_HOME: 
 
