@@ -51,14 +51,9 @@ In the case there is a [Java SE Development Kit](https://www.oracle.com/ca-en/ja
 		
 		mvnw clean test
 	
-* Running the Main application (It will be needed to copy the main file application to the src.main path)
-
-1. Copy the main file application (TexttestFixture.java) to the src.main path (from src/test/java to src/main/java)
+* Running the Main application
 	
-	Windows: copy src\test\java\com\gildedrose\TexttestFixture.java src\main\java\com\gildedrose
-	Linux: cp src/test/java/com/gildedrose/TexttestFixture.java src/main/java/com/gildedrose
-	
-2. Execute (where 10 is the number of days inside the application):
+1. Execute (where 10 is the number of days inside the application):
 
 		mvnw compile exec:java -Dexec.mainClass="com.gildedrose.TexttestFixture" -Dexec.args="10"
 
@@ -76,13 +71,9 @@ In the case there is a [Java SE Development Kit](https://www.oracle.com/ca-en/ja
 		
 		gradlew clean test
 	
-* Running the Main application (It will be needed to copy the main file application to the src.main path)
-1. Copy the main file application (TexttestFixture.java) to the src.main path (from src/test/java to src/main/java)
-	
-	Windows: copy src\test\java\com\gildedrose\TexttestFixture.java src\main\java\com\gildedrose
-	Linux: cp src/test/java/com/gildedrose/TexttestFixture.java src/main/java/com/gildedrose
-	
-2. Execute (where 10 is the number of days inside the application):
+* Running the Main application
+
+1. Execute (where 10 is the number of days inside the application):
 
 		gradlew clean run --args="10"
 	
