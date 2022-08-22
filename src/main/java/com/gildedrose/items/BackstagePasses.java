@@ -26,7 +26,8 @@ public class BackstagePasses extends GoodAsAgedItem {
 				}
 			}
 		}
-
+		
+		// for this type super updates only the sellIn
 		super.updateQuality();
 
 		if (super.item.sellIn < 0) {

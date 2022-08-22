@@ -8,11 +8,14 @@ public class ConjuredItem extends ItemImpl {
 		super(item);
 	}
 
+	/**
+	 * This type degrades in Quality twice as fast as normal items.
+	 * 
+	 * @return the degradation rate.
+	 */
 	@Override
-	public void updateQuality() {
-		// This type degrade in Quality twice as fast as normal items
-		super.updateQuality();
-		super.updateQuality();
+	protected int getTimesDegradation() {
+		return 2;
 	}
 
 }

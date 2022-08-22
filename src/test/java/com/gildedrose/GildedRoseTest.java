@@ -17,6 +17,7 @@ class GildedRoseTest {
 	private final Item BACKSTAGE_PASSES_QUALITY_49_10 = new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49);
 	private final Item BACKSTAGE_PASSES_QUALITY_49_5 = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49);
 	private final Item CONJURED_MANA_CAKE = new Item("Conjured Mana Cake", 3, 6);
+	private final Item CONJURED_MANA_CAKE_QUALITY_10 = new Item("Conjured Mana Cake", 3, 10);
 
 	@Test
 	void foo() {
@@ -300,7 +301,7 @@ class GildedRoseTest {
 			Item[] items = new Item[] { CONJURED_MANA_CAKE };
 			GildedRose app = new GildedRose(items);
 			app.updateQuality();
-			assertEquals("Conjured Mana Cake, 1, 4", app.items[0].toString());
+			assertEquals("Conjured Mana Cake, 2, 4", app.items[0].toString());
 		}
 
 		@Test
@@ -309,7 +310,7 @@ class GildedRoseTest {
 			GildedRose app = new GildedRose(items);
 			app.updateQuality();
 			app.updateQuality();
-			assertEquals("Conjured Mana Cake, -1, 1", app.items[0].toString());
+			assertEquals("Conjured Mana Cake, 1, 2", app.items[0].toString());
 		}
 
 		@Test
@@ -319,7 +320,7 @@ class GildedRoseTest {
 			app.updateQuality();
 			app.updateQuality();
 			app.updateQuality();
-			assertEquals("Conjured Mana Cake, -3, 0", app.items[0].toString());
+			assertEquals("Conjured Mana Cake, 0, 0", app.items[0].toString());
 		}
 
 		@Test
@@ -330,7 +331,18 @@ class GildedRoseTest {
 			app.updateQuality();
 			app.updateQuality();
 			app.updateQuality();
-			assertEquals("Conjured Mana Cake, -5, 0", app.items[0].toString());
+			assertEquals("Conjured Mana Cake, -1, 0", app.items[0].toString());
+		}
+		
+		@Test
+		void ConjuredManaCakeTestQuality10AfterFourDays() {
+			final int DAYS = 4;
+			Item[] items = new Item[] { CONJURED_MANA_CAKE_QUALITY_10 };
+			GildedRose app = new GildedRose(items);
+			for (int i = 0; i < DAYS; i++) {
+				app.updateQuality();
+			}
+			assertEquals("Conjured Mana Cake, -1, 0", app.items[0].toString());
 		}
 
 	}
