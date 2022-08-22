@@ -1,9 +1,11 @@
 package com.gildedrose.items;
 
+import com.gildedrose.Item;
+
 public class SulfurasHandOfRagnaros extends SulfurasItem {
 
-	public SulfurasHandOfRagnaros(String name, int sellIn, int quality) {
-		super(name, sellIn, quality);
+	public SulfurasHandOfRagnaros(Item item) {
+		super(item);
 	}
 
 }

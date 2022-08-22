@@ -1,9 +1,11 @@
 package com.gildedrose.items;
 
+import com.gildedrose.Item;
+
 public class ConjuredItem extends ItemImpl {
 
-	public ConjuredItem(String name, int sellIn, int quality) {
-		super(name, sellIn, quality);
+	public ConjuredItem(Item item) {
+		super(item);
 	}
 
 	@Override

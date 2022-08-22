@@ -1,9 +1,11 @@
 package com.gildedrose.items;
 
+import com.gildedrose.Item;
+
 public class ConjuredManaCake extends ConjuredItem {
 
-	public ConjuredManaCake(String name, int sellIn, int quality) {
-		super(name, sellIn, quality);
+	public ConjuredManaCake(Item item) {
+		super(item);
 	}
 
 }

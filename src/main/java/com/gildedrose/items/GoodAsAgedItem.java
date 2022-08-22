@@ -1,14 +1,16 @@
 package com.gildedrose.items;
 
+import com.gildedrose.Item;
+
 public class GoodAsAgedItem extends ItemImpl {
 
-	public GoodAsAgedItem(String name, int sellIn, int quality) {
-		super(name, sellIn, quality);
+	public GoodAsAgedItem(Item item) {
+		super(item);
 	}
 
 	@Override
 	public void updateQuality() {
-		super.sellIn = super.sellIn - 1;
+		super.item.sellIn = super.item.sellIn - 1;
 	}
 
 }

@@ -1,33 +1,29 @@
 package com.gildedrose.items;
 
+import com.gildedrose.Item;
+
 public class ItemImpl implements IItem {
 
-	public String name;
+	protected Item item;
 
-	public int sellIn;
-
-	public int quality;
-
-	public ItemImpl(String name, int sellIn, int quality) {
-		this.name = name;
-		this.sellIn = sellIn;
-		this.quality = quality;
+	public ItemImpl(Item item) {
+		this.item = item;
 	}
 
 	@Override
 	public String toString() {
-		return this.name + ", " + this.sellIn + ", " + this.quality;
+		return item.toString();
 	}
 
 	@Override
 	public void updateQuality() {
-		 if (this.quality > 0) {
-             this.quality = this.quality - 1;
+		 if (item.quality > 0) {
+			 item.quality = item.quality - 1;
          }
-		 this.sellIn = this.sellIn - 1;
-		 if (this.sellIn < 0) {
-			 if (this.quality > 0) {
-                 this.quality = this.quality - 1;
+		 item.sellIn = item.sellIn - 1;
+		 if (item.sellIn < 0) {
+			 if (item.quality > 0) {
+				 item.quality = item.quality - 1;
              }
 		 }
 	}

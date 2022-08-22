@@ -17,7 +17,6 @@ class GildedRose {
 			// as a requirement Item was not changed at all
 			IItem item = ItemFactory.createItem(items[i]);
 			item.updateQuality();
-			items[i] = ItemFactory.getItem(item);
 		}
 	}
 

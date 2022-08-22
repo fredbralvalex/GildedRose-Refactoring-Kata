@@ -18,21 +18,16 @@ public class ItemFactory {
 
 		switch (item.name) {
 		case BACKSTAGE_PASSES:
-			return new BackstagePasses(item.name, item.sellIn, item.quality);
+			return new BackstagePasses(item);
 		case SULFURAS_HAND_OF_RAGNAROS:
-			return new SulfurasHandOfRagnaros(item.name, item.sellIn, item.quality);
+			return new SulfurasHandOfRagnaros(item);
 		case AGED_BRIE:
-			return new AgedBrie(item.name, item.sellIn, item.quality);
+			return new AgedBrie(item);
 		case CONJURED_MANA_CAKE:
-			return new ConjuredManaCake(item.name, item.sellIn, item.quality);
+			return new ConjuredManaCake(item);
 		default:
-			return new ItemImpl(item.name, item.sellIn, item.quality);
+			return new ItemImpl(item);
 		}
-	}
-
-	public static Item getItem(IItem item) {
-		ItemImpl implementation = (ItemImpl) item;
-		return new Item(implementation.name, implementation.sellIn, implementation.quality);
 	}
 
 }

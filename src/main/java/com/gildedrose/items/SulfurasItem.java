@@ -1,9 +1,11 @@
 package com.gildedrose.items;
 
+import com.gildedrose.Item;
+
 public class SulfurasItem extends ItemImpl {
 
-	public SulfurasItem(String name, int sellIn, int quality) {
-		super(name, sellIn, quality);
+	public SulfurasItem(Item item) {
+		super(item);
 	}
 
 	@Override
